@@ -1,0 +1,158 @@
+@mixin bg-image($url){
+  background-image: $url;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin size($width, $length) {
+  width: $width;
+  height: $length;
+}
+
+@mixin justify-content-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin position($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+
+.hide {
+  opacity: 0;
+  transition: 1s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.content-section {
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-list {
+  position: relative;
+  width: 802px;
+  height: 100vh;
+  background-color: #F9FCFF;
+
+  .item {
+    @include justify-content-center;
+    @include align-items-center;
+  }
+
+  .progress-left-items {
+    .eleph {
+      @include position(75px, 95px);
+    }
+    .java {
+      @include position(148px, 203px);
+    }
+    .steck {
+      @include position(236px, 104px);
+    }
+  }
+  .progress-right-items {
+    .python {
+      @include position(249px, 653px);
+    }
+    .delphy {
+      @include position(176px, 541px);
+    }
+  }
+  .progress-right-top-items {
+    @include position(35px, 127px);
+  }
+  .progress-center-items {
+    .php {
+      @include position(212px, 375px);
+    }
+    .delphy {
+      @include position(310px, 301px);
+    }
+    .steck {
+      @include position(310px, 454px);
+    }
+  }
+
+  .progress-center-bottom-items {
+    .node-1 {
+      @include position(389px, 89px);
+    }
+    .node-2 {
+      @include position(389px, 178px);
+    }
+    .node-3 {
+      @include position(389px, 270px);
+    }
+    .eleph-1 {
+      @include position(389px, 352px);
+    }
+    .eleph-2 {
+      @include position(511px, 137px);
+    }
+    .steck {
+      @include position(511px, 227px);
+    }
+  }
+
+  .progress {
+    @include justify-content-center;
+    position: relative;
+    flex: 1;
+
+    &-left {
+      @include position(0, 60px);
+    }
+    &-right {
+      @include position(45px, 400px);
+    }
+    &-right-top {
+      @include position(6px, 407px);
+    }
+    &-center {
+      @include position(87px, 266px);
+    }
+    &-center-bottom {
+      @include position(58px, 149px);
+    }
+  }
+  .progress:nth-child(1) { //center-progress
+    order: 1;
+    z-index: 2;
+  }
+  .progress:nth-child(2) { //left-progress
+    order: 0;
+  }
+  .progress:nth-child(3) { //right-progress
+    order: 2;
+  }
+}
+
+.docker-logo {
+  @include justify-content-center;
+  @include align-items-center;
+  position: relative;
+
+  .circle {
+    @include size(160px, 160px);
+  }
+  .docker {
+    @include size(94px, 67px);
+    position: absolute;
+  }
+}
