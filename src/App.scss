@@ -35,6 +35,25 @@
   opacity: 1;
 }
 
+[class*="test-block"] {
+  width: 100px;
+  height: 100px;
+}
+.test-block-red {
+  background-color: red;
+}
+.test-block-blue {
+  background-color: blue;
+}
+.test-block-green {
+  background-color: green;
+}
+
+.test-block-purple {
+  background-color: purple;
+}
+
+
 .content-section {
   height: 100vh;
   width: 100%;
@@ -46,113 +65,176 @@
 
 .progress-list {
   position: relative;
-  width: 802px;
+  width: 100%;
   height: 100vh;
   background-color: #F9FCFF;
+}
 
-  .item {
-    @include justify-content-center;
+.progress-list-deploy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 647px;
+
+  .deploy-item {
     @include align-items-center;
-  }
-
-  .progress-left-items {
-    .eleph {
-      @include position(75px, 95px);
-    }
-    .java {
-      @include position(148px, 203px);
-    }
-    .steck {
-      @include position(236px, 104px);
-    }
-  }
-  .progress-right-items {
-    .python {
-      @include position(249px, 653px);
-    }
-    .delphy {
-      @include position(176px, 541px);
-    }
-  }
-  .progress-right-top-items {
-    @include position(35px, 127px);
-  }
-  .progress-center-items {
-    .php {
-      @include position(212px, 375px);
-    }
-    .delphy {
-      @include position(310px, 301px);
-    }
-    .steck {
-      @include position(310px, 454px);
-    }
-  }
-
-  .progress-center-bottom-items {
-    .node-1 {
-      @include position(389px, 89px);
-    }
-    .node-2 {
-      @include position(389px, 178px);
-    }
-    .node-3 {
-      @include position(389px, 270px);
-    }
-    .eleph-1 {
-      @include position(389px, 352px);
-    }
-    .eleph-2 {
-      @include position(511px, 137px);
-    }
-    .steck {
-      @include position(511px, 227px);
-    }
-  }
-
-  .progress {
     @include justify-content-center;
-    position: relative;
-    flex: 1;
+    @include size(51px, 51px);
+  }
+}
 
-    &-left {
-      @include position(0, 60px);
-    }
-    &-right {
-      @include position(45px, 400px);
-    }
-    &-right-top {
-      @include position(6px, 407px);
-    }
-    &-center {
-      @include position(87px, 266px);
-    }
-    &-center-bottom {
-      @include position(58px, 149px);
+.receipt-container {
+  .nodejs-container {
+    margin-top: 295px;
+    margin-right: auto;
+    margin-left: 165px;
+    width: 311px;
+    display: flex;
+    justify-content: space-between;
+
+    div:nth-child(3) {
+      margin-right: 80px;
     }
   }
-  .progress:nth-child(1) { //center-progress
-    order: 1;
-    z-index: 2;
+
+  .line {
+    z-index: -10;
+    &.java-line {
+      @include position(46px, 50px);
+      height: 189px;
+    }
+    &.python-line {
+      @include position(54px, 340px);
+      width: 240px;
+    }
+    &.php-line {
+      @include position(116px, 262px);
+    }
+    &.extend-nodejs-line {
+      @include position(2px, 338px);
+      width: 213px
+    }
+    &.node-line {
+      @include position(92px, 130px);
+    }
   }
-  .progress:nth-child(2) { //left-progress
-    order: 0;
+
+
+  .extend-nodejs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 130px;
+    display: flex;
+    align-items: center;
   }
-  .progress:nth-child(3) { //right-progress
-    order: 2;
+
+  .backend-container {
+    position: absolute;
+    top: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+
+    .java {
+      @include position(-8px, 105px)
+    }
+    .python {
+      @include position(25px, 480px)
+    }
+    .php {
+      @include position(90px, 295px)
+    }
+  }
+}
+
+.connection-container {
+  .line {
+    z-index: -10;
+    &.postre-sql-line {
+      @include position(3px, 0);
+      width: 291px;
+      height: 161px;
+    }
+    &.redis-line {
+      @include position(114px, 22px);
+      width: 221px;
+      height: 211px;
+    }
+    &.maria-line {
+      @include position(114px, 22px);
+    }
+    &.php-line {
+      @include position(162px, 195px);
+      width: 257px;
+      height: 238px;
+    }
+    &.left-node-line {
+      @include position(396px, 75px);
+    }
+    &.right-node-line {
+      @include position(396px, 297px);
+    }
+  }
+
+  .mariadb {
+    @include position(259px, 590px);
+  }
+  .postre-sql {
+    @include position(484px, 427px);
+  }
+
+  .java-container {
+    .postre-sql {
+      @include position(81px, 27px)
+    }
+    .redis {
+      @include position(232px, 27px)
+    }
+  }
+
+  .php-container {
+    .mysql {
+      @include position(338px, 226px)
+    }
+    .redis {
+      @include position(338px, 367px)
+    }
+  }
+
+  .node-container {
+    .redis {
+      @include position(597px, 301px)
+    }
+    .postre-sql {
+      @include position(597px, 209px);
+    }
+  }
+}
+
+.binding-container {
+  .line {
+    z-index: -10;
+    &.sql-redis-line {
+      @include position(298px, 258px);
+    }
+    &.postre-redis-line {
+      @include position(98px, 67px);
+    }
+    &.python-maria-line {
+      @include position(208px, 534px);
+    }
+    &.node-container-line {
+      @include position(501px, 168px);
+    }
   }
 }
 
 .docker-logo {
-  @include justify-content-center;
-  @include align-items-center;
-  position: relative;
-
-  .circle {
-    @include size(160px, 160px);
-  }
-  .docker {
-    @include size(94px, 67px);
-    position: absolute;
-  }
+  margin-left: auto;
+  margin-right: auto;
+  width: 189px;
+  height: 189px;
 }

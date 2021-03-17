@@ -1,13 +1,28 @@
-<svg width="96" height="68" viewBox="0 0 96 68" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M95.088 31.6484C90.5754 37.1447 81.7332 36.7155 81.7332 36.7155C76.28 60.2088 43.3471 72.1658 20.4816 66.2919C-2.38155 60.42 0.76361 33.1496 0.76361 33.1496H67.6797C73.2019 33.1496 73.6226 31.4715 73.6226 31.4715C68.7281 19.864 76.2802 13.6407 76.2802 13.6407C82.1541 14.6913 83.6209 24.7585 83.6209 24.7585C88.442 23.8936 92.314 24.9225 94.6825 25.9126C94.9197 27.7957 95.0579 29.7091 95.088 31.6484Z" fill="white"/>
-    <path d="M17.2669 22.5215H7.89648V31.0517H17.2669V22.5215Z" fill="white"/>
-    <path d="M29.0404 22.5215H19.6699V31.0517H29.0404V22.5215Z" fill="white"/>
-    <path d="M64.3646 22.5215H54.9941V31.0517H64.3646V22.5215Z" fill="white"/>
-    <path d="M52.5892 22.5215H43.2188V31.0517H52.5892V22.5215Z" fill="white"/>
-    <path d="M52.5892 0.706665H43.2188V9.2369H52.5892V0.706665Z" fill="white"/>
-    <path d="M40.8138 22.5215H31.4434V31.0517H40.8138V22.5215Z" fill="white"/>
-    <path d="M29.0404 11.6132H19.6699V20.1434H29.0404V11.6132Z" fill="white"/>
-    <path d="M52.5892 11.6132H43.2188V20.1434H52.5892V11.6132Z" fill="white"/>
-    <path d="M40.8138 11.6132H31.4434V20.1434H40.8138V11.6132Z" fill="white"/>
+<svg width="237" height="237" viewBox="0 0 237 237" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#filter0_d)">
+        <circle cx="118.5" cy="118.5" r="94.5" fill="#0048FF"/>
+        <circle cx="118.5" cy="118.5" r="91.5" stroke="white" stroke-width="6"/>
+    </g>
+    <path d="M174.754 116.022C169.439 122.511 159.025 122.005 159.025 122.005C152.603 149.743 113.817 163.861 86.888 156.926C59.9615 149.993 63.6656 117.794 63.6656 117.794H142.474C148.978 117.794 149.473 115.813 149.473 115.813C143.709 102.108 152.603 94.7601 152.603 94.7601C159.521 96.0005 161.249 107.887 161.249 107.887C166.926 106.866 171.487 108.08 174.276 109.249C174.555 111.473 174.718 113.732 174.754 116.022Z" fill="white"/>
+    <path d="M83.1003 105.246H72.0645V115.317H83.1003V105.246Z" fill="white"/>
+    <path d="M96.9684 105.246H85.9326V115.317H96.9684V105.246Z" fill="white"/>
+    <path d="M138.569 105.246H127.533V115.317H138.569V105.246Z" fill="white"/>
+    <path d="M124.703 105.246H113.667V115.317H124.703V105.246Z" fill="white"/>
+    <path d="M124.703 79.4888H113.667V89.5605H124.703V79.4888Z" fill="white"/>
+    <path d="M110.835 105.246H99.7988V115.317H110.835V105.246Z" fill="white"/>
+    <path d="M96.9684 92.3661H85.9326V102.438H96.9684V92.3661Z" fill="white"/>
+    <path d="M124.703 92.3661H113.667V102.438H124.703V92.3661Z" fill="white"/>
+    <path d="M110.835 92.3661H99.7988V102.438H110.835V92.3661Z" fill="white"/>
+    <defs>
+        <filter id="filter0_d" x="0" y="0" width="237" height="237" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+            <feOffset/>
+            <feGaussianBlur stdDeviation="12"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0.743055 0 0 0 0 0.876666 0 0 0 0 1 0 0 0 1 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+        </filter>
+    </defs>
 </svg>
 
