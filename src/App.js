@@ -6,8 +6,7 @@ import ConnectionContainer from "./acts/ConnectionContainer";
 import BindingContainer from "./acts/BindingContainer";
 
 let globalProgress = 0,
-    delta = 0,
-    greenProgress = 0;
+    delta = 0;
 
 let redAnimProgress = 0,
     greenAnimProgress = 0,
@@ -20,6 +19,53 @@ const animStack = [
 ];
 
 function App() {
+
+  function createProgress(animStack) {
+    const progressStack = {}
+    animStack.forEach((item, index) => {
+      progressStack[animStack[index]] = 0
+    })
+
+    const setProgressStack = (stack, offset) => {
+      const factor = Object.keys(stack).length;
+
+      const scroll = offset > 0 ? "scroll-to-bot" : "scroll-to-top";
+
+      if (scroll === "scroll-to-bot") {
+        for (const key in stack) {
+          let progress = stack[key];
+          if (progress < 1) {
+            progress += offset * factor;
+            if (progress > 1) progress = 1;
+            stack[key] = progress;
+            break;
+          }
+        }
+      }
+      if (scroll === "scroll-to-top") {
+        for (const key in stack) {
+          let progress = stack[key];
+          if (progress > 0) {
+            progress += offset * factor;
+            if (progress < 0) progress = 0;
+            stack[key] = progress;
+            break;
+          }
+        }
+      }
+
+
+      console.log(stack);
+    }
+    return [progressStack, setProgressStack]
+  }
+
+  const [progressStack, setProgress] = createProgress(
+      ["receiptProgress", "connectionProgress", "BindingContainer"]);
+
+
+
+
   return (
       <>
         <section className="content-section" >
@@ -32,6 +78,8 @@ function App() {
               {(progress) => {
                 delta = progress - globalProgress;
                 globalProgress = progress;
+
+                setProgress(progressStack, delta)
 
                 if (delta >= 0) {
                   for (let i = 0; i < animStack.length; i++) {
@@ -50,6 +98,7 @@ function App() {
                   }
                 }
 
+
                 return (
                   <div className="progress-list">
                     <ReceiptContainer progress={animStack[0]} />
@@ -64,65 +113,6 @@ function App() {
         <section className="content-section" >
           <h1>Just a content</h1>
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      {/*  <section className="docker-process-scene">*/}
-      {/*    <Controller globalSceneOptions={{triggerHook: 0}}>*/}
-      {/*      <Scene pin  duration="5000" indicators={true}>*/}
-      {/*        {(progress) => (*/}
-      {/*            <div className="progress-list">*/}
-      {/*              <Timeline totalProgress={progress*2} paused>*/}
-      {/*                <Tween {...animDockerLogo}>*/}
-      {/*                  <DockerLogo ref={ref} />*/}
-      {/*                </Tween>*/}
-      {/*                <Tween {...animLineProgress}>*/}
-      {/*                  <LeftProgress ref={ref} />*/}
-      {/*                </Tween>*/}
-      {/*                <Tween {...animLineProgress}>*/}
-      {/*                  <RightProgress ref={ref} />*/}
-      {/*                </Tween>*/}
-      {/*                <Tween {...animLineProgress}>*/}
-      {/*                  <CenterProgress ref={ref}/>*/}
-      {/*                </Tween>*/}
-      {/*              </Timeline>*/}
-      {/*            </div>*/}
-      {/*        )}*/}
-      {/*      </Scene>*/}
-      {/*    </Controller>*/}
-      {/*  </section>*/}
-
-      {/*  <section className="content-section" >*/}
-      {/*    <h1>Just a content</h1>*/}
-      {/*  </section>*/}
       </>
   );
 }
