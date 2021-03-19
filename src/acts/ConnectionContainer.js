@@ -12,12 +12,29 @@ const ConnectionContainer = ({progress}) => (
         progress={progress}
         paused
     >
-      <div className="progress-list-deploy connection-container">
+        <div className="mariadb-line line">
+          <svg width="234" height="242" viewBox="0 0 234 242" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <Tween from={{strokeDashoffset: -234}} to={{strokeDashoffset: 0}}>
+              <path strokeDasharray="500" d="M172 182V112C172 84.3858 149.614 62 122 62H60" stroke="#DDE4F5" strokeWidth="4"/>
+            </Tween>
+          </svg>
+        </div>
 
         <div className="mariadb">
           <Tween {...animItemFadeIn}>
             <MariaDBItem />
           </Tween>
+        </div>
+
+        <div className="right-node-line line">
+          <svg width="258" height="290" viewBox="0 0 258 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <Tween from={{strokeDashoffset: 501}} to={{strokeDashoffset: 286}}>
+              <path strokeDasharray="500" d="M63 62H168.646V62C189.28 62 206.006 78.7267 206.006 99.3602V116.5H189.5" stroke="#DDE4F5" strokeWidth="4"/>
+            </Tween>
+            <Tween from={{strokeDashoffset: -246}} to={{strokeDashoffset: 23}}>
+              <path strokeDasharray="500" d="M60 237H133.003H155.506C183.121 237 205.506 214.614 205.506 187V118" stroke="#DDE4F5" strokeWidth="4"/>
+            </Tween>
+          </svg>
         </div>
 
         <div className="postre-sql">
@@ -26,61 +43,11 @@ const ConnectionContainer = ({progress}) => (
           </Tween>
         </div>
 
-
-        <div className="postre-sql-line line">
-          <svg width="100%" height="100%" viewBox="0 0 331 161" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <Tween from={{strokeDashoffset: 256}} to={{strokeDashoffset: 0}}>
-              <path strokeDasharray="256" d="M270.897 98.137H241.179C231.331 98.137 223.348 90.1538 223.348 80.306V80.306C223.348 70.4582 215.365 62.475 205.517 62.475H70.5105C65.8211 62.475 62.0195 66.2765 62.0195 70.9659V70.9659" stroke="#DDE4F5" strokeWidth="4"/>
-            </Tween>
-          </svg>
+        <div className="redis node-container">
+          <Tween {...animItemFadeIn}>
+            <RedisItem />
+          </Tween>
         </div>
-
-        <div className="java-container">
-          <div className="postre-sql">
-            <Tween {...animItemFadeIn}>
-              <PostreSQLItem />
-            </Tween>
-          </div>
-
-          <div className="redis">
-            <Tween {...animItemFadeIn}>
-              <RedisItem />
-            </Tween>
-          </div>
-        </div>
-
-
-        <div className="redis-line line">
-          <svg width="100%" height="100%" viewBox="0 0 249 211" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <Tween from={{strokeDashoffset: 256}} to={{strokeDashoffset: 0}}>
-              <path strokeDasharray="256" d="M186.348 60.8574V81.2357V98.3143C186.348 125.929 163.962 148.314 136.348 148.314H60.6816" stroke="#DDE4F5" strokeWidth="4"/>
-            </Tween>
-          </svg>
-        </div>
-
-        <div className="php-line line">
-          <svg width="100%" height="100%" viewBox="0 0 277 238" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <Tween from={{strokeDashoffset: 400}} to={{strokeDashoffset: 0}}>
-              <path strokeDasharray="400" d="M62.0859 177.053V112.425C62.0859 84.8106 84.4717 62.4248 112.086 62.4248H134.259H164.074C191.688 62.4248 214.074 84.8106 214.074 112.425V177.053" stroke="#DDE4F5" strokeWidth="4"/>
-            </Tween>
-          </svg>
-        </div>
-
-        <div className="php-container">
-          <div className="mysql">
-            <Tween {...animItemFadeIn}>
-              <MySQLItem />
-            </Tween>
-          </div>
-
-          <div className="redis">
-            <Tween {...animItemFadeIn}>
-              <RedisItem />
-            </Tween>
-          </div>
-        </div>
-
-
 
         <div className="left-node-line line">
           <svg width="189" height="295" viewBox="0 0 189 295" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,29 +57,70 @@ const ConnectionContainer = ({progress}) => (
           </svg>
         </div>
 
-        <div className="right-node-line line">
-          <svg width="258" height="290" viewBox="0 0 258 290" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <Tween from={{strokeDashoffset: 300}} to={{strokeDashoffset: 0}}>
-              <path strokeDasharray="300" d="M158.607 62.6245V62.6245C179.24 62.6245 195.967 79.3513 195.967 99.9847V177.349C195.967 204.963 173.581 227.349 145.967 227.349H60.9609" stroke="#DDE4F5" strokeWidth="4"/>
+        <div className="postre-sql node-container">
+          <Tween {...animItemFadeIn}>
+            <PostreSQLItem />
+          </Tween>
+        </div>
+
+
+
+        <div className="postre-sql-line line">
+          <svg width="100%" height="100%" viewBox="0 0 331 161" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <Tween from={{strokeDashoffset: 301}} to={{strokeDashoffset: 0}}>
+              <path strokeDasharray="300" d="M234 81V81C234 70.5066 225.493 62 215 62H70.491C65.8015 62 62 65.8015 62 70.491V70.491" stroke="#DDE4F5" strokeWidth="4"/>
             </Tween>
           </svg>
         </div>
 
-        <div className="node-container">
-          <div className="postre-sql">
-            <Tween {...animItemFadeIn}>
-              <PostreSQLItem />
-            </Tween>
-          </div>
-          <div className="redis">
-            <Tween {...animItemFadeIn}>
-              <RedisItem />
-            </Tween>
-          </div>
+        <div className="postre-sql java-container">
+          <Tween {...animItemFadeIn}>
+            <PostreSQLItem />
+          </Tween>
         </div>
 
+        <div className="redis-line line">
+          <svg width="100%" height="100%" viewBox="0 0 249 211" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <Tween from={{strokeDashoffset: 256}} to={{strokeDashoffset: 0}}>
+              <path strokeDasharray="256" d="M186.348 60.8574V81.2357V98.3143C186.348 125.929 163.962 148.314 136.348 148.314H60.6816" stroke="#DDE4F5" strokeWidth="4"/>
+            </Tween>
+          </svg>
+        </div>
 
-      </div>
+        <div className="redis java-container">
+          <Tween {...animItemFadeIn}>
+            <RedisItem />
+          </Tween>
+        </div>
+
+        <div className="mysql-line line php-container">
+          <svg width="203" height="238" viewBox="0 0 203 238" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <Tween from={{strokeDashoffset: -167}} to={{strokeDashoffset: 0}}>
+              <path strokeDasharray="400" d="M62 177V112.5C62 84.8858 84.3858 62.5 112 62.5H134.179" stroke="#DDE4F5" strokeWidth="4"/>
+            </Tween>
+          </svg>
+        </div>
+
+        <div className="mysql php-container">
+          <Tween {...animItemFadeIn}>
+            <MySQLItem />
+          </Tween>
+        </div>
+
+        <div className="redis-line line php-container">
+          <svg width="203" height="238" viewBox="0 0 203 238" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <Tween from={{strokeDashoffset: 408}} to={{strokeDashoffset: 0}}>
+              <path strokeDasharray="400" d="M60.2598 62.4248H90.0748C117.689 62.4248 140.075 84.8106 140.075 112.425V177.053" stroke="#DDE4F5" strokeWidth="4"/>
+            </Tween>
+          </svg>
+        </div>
+
+        <div className="redis php-container">
+          <Tween {...animItemFadeIn}>
+            <RedisItem />
+          </Tween>
+        </div>
+
     </Timeline>
 );
 

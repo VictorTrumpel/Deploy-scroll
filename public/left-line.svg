@@ -1,40 +1,16 @@
-<svg width="331" height="323" viewBox="0 0 331 323" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g filter="url(#filter0_d)">
-        <path d="M270.897 98.137H241.179C231.331 98.137 223.348 90.1538 223.348 80.306V80.306C223.348 70.4582 215.365 62.475 205.517 62.475H70.5105C65.8211 62.475 62.0195 66.2765 62.0195 70.9659V70.9659" stroke="#DDE4F5" stroke-width="4"/>
-    </g>
-    <g filter="url(#filter1_d)">
-        <path d="M223.349 85.4005V172.857H197.027" stroke="#DDE4F5" stroke-width="4"/>
-    </g>
-    <g filter="url(#filter2_d)">
-        <path d="M223.348 172.857V193.236V210.314C223.348 237.929 200.962 260.314 173.348 260.314H97.6816" stroke="#DDE4F5" stroke-width="4"/>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
     <defs>
-        <filter id="filter0_d" x="0.0195312" y="0.474976" width="330.878" height="159.662" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-            <feOffset/>
-            <feGaussianBlur stdDeviation="30"/>
-            <feColorMatrix type="matrix" values="0 0 0 0 0.877778 0 0 0 0 0.941333 0 0 0 0 1 0 0 0 1 0"/>
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-        </filter>
-        <filter id="filter1_d" x="137.027" y="25.4005" width="148.322" height="209.457" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-            <feOffset/>
-            <feGaussianBlur stdDeviation="30"/>
-            <feColorMatrix type="matrix" values="0 0 0 0 0.877778 0 0 0 0 0.941333 0 0 0 0 1 0 0 0 1 0"/>
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-        </filter>
-        <filter id="filter2_d" x="37.6816" y="112.857" width="247.666" height="209.457" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-            <feOffset/>
-            <feGaussianBlur stdDeviation="30"/>
-            <feColorMatrix type="matrix" values="0 0 0 0 0.877778 0 0 0 0 0.941333 0 0 0 0 1 0 0 0 1 0"/>
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-        </filter>
+        <mask id="theMask" maskUnits="userSpaceOnUse">
+            <path id="maskPath" d="M743,354C712.62,561.11,520.11,704.38,313,674,147.31,649.7,32.7,495.69,57,330,76.44,197.45,199.65,105.76,332.2,125.2c106,15.55,179.39,114.12,163.84,220.16A155.25,155.25,0,0,1,319.91,476.43a124.2,124.2,0,0,1-104.86-140.9,99.37,99.37,0,0,1,112.73-83.89,79.49,79.49,0,0,1,67.11,90.18,63.6,63.6,0,0,1-72.15,53.69,50.89,50.89,0,0,1-42.95-57.72" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="18" />
+        </mask>
+
     </defs>
+
+    <g id="maskReveal" mask="url(#theMask)">
+        <path  d="M736.08,389.48C690.17,577.19,508.06,702.61,313,674,147.31,649.7,32.7,495.69,57,330,76.44,197.45,199.65,105.76,332.2,125.2c106,15.55,179.39,114.12,163.84,220.16A155.25,155.25,0,0,1,319.91,476.43a124.2,124.2,0,0,1-104.86-140.9,99.37,99.37,0,0,1,112.73-83.89,79.49,79.49,0,0,1,67.11,90.18,63.6,63.6,0,0,1-72.15,53.69A50.88,50.88,0,0,1,282,361.56" fill="none" stroke="white" stroke-linecap="round" stroke-miterlimit="10" stroke-width="16" stroke-dasharray="0 24" />
+        <path  d="M736.08,389.48C690.17,577.19,508.06,702.61,313,674,147.31,649.7,32.7,495.69,57,330,76.44,197.45,199.65,105.76,332.2,125.2c106,15.55,179.39,114.12,163.84,220.16A155.25,155.25,0,0,1,319.91,476.43a124.2,124.2,0,0,1-104.86-140.9,99.37,99.37,0,0,1,112.73-83.89,79.49,79.49,0,0,1,67.11,90.18,63.6,63.6,0,0,1-72.15,53.69A50.88,50.88,0,0,1,282,361.56" fill="none" stroke="#5cceee" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8" stroke-dasharray="24 24" />
+
+    </g>
+
+
 </svg>

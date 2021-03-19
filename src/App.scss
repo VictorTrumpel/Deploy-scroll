@@ -26,6 +26,9 @@
   left: $left;
 }
 
+$deploy-scene-width: 647px;
+$deploy-scene-height: 655px;
+
 .hide {
   opacity: 0;
   transition: 1s ease-in-out;
@@ -35,25 +38,7 @@
   opacity: 1;
 }
 
-[class*="test-block"] {
-  width: 100px;
-  height: 100px;
-}
-.test-block-red {
-  background-color: red;
-}
-.test-block-blue {
-  background-color: blue;
-}
-.test-block-green {
-  background-color: green;
-}
-
-.test-block-purple {
-  background-color: purple;
-}
-
-
+//just for content test
 .content-section {
   height: 100vh;
   width: 100%;
@@ -62,184 +47,321 @@
   justify-content: center;
   align-items: center;
 }
+//
 
 .docker-progress-scene {
-
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .progress-list {
+  @include align-items-center;
   position: relative;
   width: 100%;
   height: 100vh;
+  min-height: 832px;
+
+  &-header {
+    position: absolute;
+    top: 0;
+    margin-top: 20px;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 48px;
+    color: blue;
+  }
+
+  .text-container {
+    @include align-items-center;
+    margin-left: $deploy-scene-width;
+    padding-left: 5%;
+    height: $deploy-scene-height;
+    width: 100%;
+
+    .text-item {
+      opacity: 0;
+      position: absolute;
+      max-width: 661px;
+      span.number {
+        font-size: 20px;
+        font-weight: 700;
+        color: #CAD9FF;
+      }
+      span.blue-light {
+        color: blue;
+      }
+      h5 {
+        margin: 0;
+        font-size: 36px;
+        font-weight: 500;
+      }
+      p {
+        margin-top: 24px;
+        margin-bottom: 0;
+        font-size: 20px;
+      }
+    }
+  }
 }
 
 .progress-list-deploy {
-  border: 1px solid black;
   position: absolute;
-  top: 50%;
-  margin-top: -327.5px;
-  width: 647px;
-  height: 655px;
+  width: $deploy-scene-width;
+  height: $deploy-scene-height;
 
   .deploy-item {
     @include align-items-center;
     @include justify-content-center;
     @include size(51px, 51px);
   }
-}
 
-.receipt-container {
-  .nodejs-container {
-    margin-top: 295px;
-    margin-right: auto;
-    margin-left: 165px;
-    width: 311px;
-    display: flex;
-    justify-content: space-between;
-
-    div:nth-child(3) {
-      margin-right: 80px;
+  &.receipt-container {
+    .nodejs-container {
+      &.node1 {
+        @include position(481px, 166px)
+      }
+      &.node2 {
+        @include position(481px, 257px)
+      }
+      &.node3 {
+        @include position(481px, 343px)
+      }
     }
-  }
 
-  .line {
-    z-index: -10;
-    &.java-line {
-      @include position(46px, 50px);
+    .docker-logo {
+      margin-left: auto;
+      margin-right: auto;
+      width: 189px;
       height: 189px;
     }
-    &.python-line {
-      @include position(54px, 340px);
-      width: 240px;
+
+    .line {
+      z-index: -10;
+      &.java-line {
+        @include position(46px, 50px);
+        height: 189px;
+      }
+      &.python-line {
+        @include position(54px, 340px);
+        width: 240px;
+      }
+      &.php-line {
+        @include position(116px, 262px);
+      }
+      &.extend-nodejs-line {
+        @include position(2px, 338px);
+        width: 213px
+      }
+      &.node1-line {
+        @include position(92px, 130px);
+      }
+      &.node2-line {
+        @include position(397px, 158px);
+      }
+      &.node3-line {
+        @include position(397px, 224px);
+      }
+
     }
-    &.php-line {
-      @include position(116px, 262px);
+
+
+    .extend-nodejs {
+      position: absolute;
+      @include position(5px, 476px);
+      width: 150px;
+      height: 130px;
+      display: flex;
+      align-items: center;
     }
-    &.extend-nodejs-line {
-      @include position(2px, 338px);
-      width: 213px
-    }
-    &.node-line {
-      @include position(92px, 130px);
+
+    .backend-container {
+      &.java {
+        @include position(155px, 109px)
+      }
+      &.python {
+        @include position(184px, 480px)
+      }
+      &.php {
+        @include position(239px, 298px)
+      }
     }
   }
 
+  &.connection-container {
+    .line {
+      z-index: -10;
+      &.postre-sql-line {
+        @include position(19px, -11px);
+        width: 291px;
+        height: 161px;
+      }
+      &.redis-line {
+        @include position(108px, 29px);
+        width: 221px;
+        height: 211px;
+      }
+      &.maria-line {
+        @include position(114px, 22px);
+      }
+      &.php-line {
+        @include position(162px, 195px);
+        width: 257px;
+        height: 238px;
+      }
+      &.left-node-line {
+        @include position(397px, 75px);
+      }
+      &.right-node-line {
+        @include position(397px, 297px);
+      }
+      &.mariadb-line {
+        @include position(71px, 447px);
+      }
+      &.mysql-line.php-container {
+        @include position(166px, 190px);
+      }
+      &.redis-line.php-container {
+        @include position(166px, 254px);
+      }
+    }
 
-  .extend-nodejs {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 150px;
-    height: 130px;
-    display: flex;
-    align-items: center;
-  }
-
-  .backend-container {
-    position: absolute;
-    top: 160px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 100%;
-
-    .java {
-      @include position(-8px, 105px)
-    }
-    .python {
-      @include position(25px, 480px)
-    }
-    .php {
-      @include position(90px, 295px)
-    }
-  }
-}
-
-.connection-container {
-  .line {
-    z-index: -10;
-    &.postre-sql-line {
-      @include position(3px, 0);
-      width: 291px;
-      height: 161px;
-    }
-    &.redis-line {
-      @include position(114px, 22px);
-      width: 221px;
-      height: 211px;
-    }
-    &.maria-line {
-      @include position(114px, 22px);
-    }
-    &.php-line {
-      @include position(162px, 195px);
-      width: 257px;
-      height: 238px;
-    }
-    &.left-node-line {
-      @include position(396px, 75px);
-    }
-    &.right-node-line {
-      @include position(396px, 297px);
-    }
-  }
-
-  .mariadb {
-    @include position(259px, 590px);
-  }
-  .postre-sql {
-    @include position(484px, 427px);
-  }
-
-  .java-container {
-    .postre-sql {
-      @include position(81px, 27px)
-    }
-    .redis {
-      @include position(232px, 27px)
-    }
-  }
-
-  .php-container {
-    .mysql {
-      @include position(338px, 226px)
-    }
-    .redis {
-      @include position(338px, 367px)
-    }
-  }
-
-  .node-container {
-    .redis {
-      @include position(597px, 301px)
+    .mariadb {
+      @include position(255px, 594px);
     }
     .postre-sql {
-      @include position(597px, 209px);
+      @include position(481px, 433px);
+    }
+
+    .java-container {
+      &.postre-sql {
+        @include position(93px, 30px)
+      }
+      &.redis {
+        @include position(225px, 30px)
+      }
+    }
+
+    .php-container {
+      &.mysql {
+        @include position(338px, 226px)
+      }
+      &.redis {
+        @include position(338px, 367px)
+      }
+    }
+
+    .node-container {
+      &.redis {
+        @include position(607px, 304px)
+      }
+      &.postre-sql {
+        @include position(607px, 209px);
+      }
+    }
+  }
+
+  &.binding-container {
+    .line {
+      z-index: -10;
+      overflow: hidden;
+
+      .horizontal-dotted {
+        display: block;
+        height: 4px;
+        background: linear-gradient(90deg, #DDE4F5 50%, transparent 50%);
+        background-size: 18px 4px;
+        background-repeat: repeat-x;
+        z-index: -10;
+      }
+
+      .vertical-dotted {
+        display: block;
+        width: 4px;
+        background: linear-gradient(0deg, #DDE4F5 50%, transparent 50%);
+        background-size: 4px 18px;
+        background-repeat: repeat-y;
+        z-index: -10;
+      }
+
+      &.sql-redis-line {
+        .vertical-dotted.from-php {
+          @include position(283px, 321px);
+        }
+        .vertical-dotted.from-sql {
+          height: 40px;
+          @include position(308px, 260px);
+        }
+        .vertical-dotted.from-redis {
+          @include position(308px, 378px);
+        }
+        .horizontal-dotted {
+          @include position(317px, 264px);
+        }
+      }
+
+      &.postre-redis-line {
+        .horizontal-dotted.from-postre {
+          @include position(114px, 48px);
+        }
+        .horizontal-dotted.from-redis {
+          @include position(258px, 48px);
+        }
+        .horizontal-dotted.from-java {
+          @include position(180px, 100px);
+        }
+        .vertical-dotted {
+          @include position(105px, 93px);
+        }
+      }
+
+      &.python-maria-line {
+        .horizontal-dotted {
+          @include position(208px, 534px);
+        }
+        .vertical-dotted {
+          @include position(199px, 604px);
+        }
+      }
+
+      &.node-container-line {
+        .vertical-dotted.from-node1 {
+          @include position(508px, 189px);
+        }
+        .vertical-dotted.from-node2 {
+          @include position(508px, 281px);
+        }
+        .vertical-dotted.from-node3 {
+          @include position(508px, 367px);
+        }
+        .horizontal-dotted.node-long-line {
+          @include position(558px, 189px);
+        }
+        .horizontal-dotted.from-node-postre {
+          @include position(504px, 391px);
+        }
+        .horizontal-dotted.from-postre-node2 {
+          @include position(627px, 254px);
+        }
+        .vertical-dotted.from-postre-node2 {
+          @include position(559px, 281px);
+        }
+        .horizontal-dotted.from-postre-node2 {
+          @include position(627px, 254px);
+        }
+        .vertical-dotted.from-redis {
+          @include position(554px, 327px);
+        }
+        .vertical-dotted.from-node1-postre {
+          @include position(525px, 170px);
+        }
+        .horizontal-dotted.from-node1-postre {
+          @include position(613px, 170px);
+        }
+
+      }
     }
   }
 }
 
-.binding-container {
-  .line {
-    z-index: -10;
-    &.sql-redis-line {
-      @include position(298px, 258px);
-    }
-    &.postre-redis-line {
-      @include position(98px, 67px);
-    }
-    &.python-maria-line {
-      @include position(208px, 534px);
-    }
-    &.node-container-line {
-      @include position(501px, 168px);
-    }
-  }
-}
-
-.docker-logo {
-  margin-left: auto;
-  margin-right: auto;
-  width: 189px;
-  height: 189px;
-}

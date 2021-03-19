@@ -4,68 +4,26 @@ import { Controller, Scene } from 'react-scrollmagic';
 import ReceiptContainer from './acts/ReceiptContainer';
 import ConnectionContainer from "./acts/ConnectionContainer";
 import BindingContainer from "./acts/BindingContainer";
+import {createGlobalProgress, createProgressStack} from "./progressHooks/progressWather";
+import {Timeline, Tween} from "react-gsap";
 
-let globalProgress = 0,
-    delta = 0;
 
-let redAnimProgress = 0,
-    greenAnimProgress = 0,
-    blueAnimProgress = 0
+const display = {
+  from: {
+    display: 'none'
+  },
+  to: {
+    display: 'block'
+  }
+}
 
-const animStack = [
-    redAnimProgress,
-    greenAnimProgress,
-    blueAnimProgress
-];
+
+
+const globalProgress = createGlobalProgress();
+const [progressStack, setProgressStack] = createProgressStack(
+    ["receiptProgress", "connectionProgress", "bindingProgress"]);
 
 function App() {
-
-  function createProgress(animStack) {
-    const progressStack = {}
-    animStack.forEach((item, index) => {
-      progressStack[animStack[index]] = 0
-    })
-
-    const setProgressStack = (stack, offset) => {
-      const factor = Object.keys(stack).length;
-
-      const scroll = offset > 0 ? "scroll-to-bot" : "scroll-to-top";
-
-      if (scroll === "scroll-to-bot") {
-        for (const key in stack) {
-          let progress = stack[key];
-          if (progress < 1) {
-            progress += offset * factor;
-            if (progress > 1) progress = 1;
-            stack[key] = progress;
-            break;
-          }
-        }
-      }
-      if (scroll === "scroll-to-top") {
-        for (const key in stack) {
-          let progress = stack[key];
-          if (progress > 0) {
-            progress += offset * factor;
-            if (progress < 0) progress = 0;
-            stack[key] = progress;
-            break;
-          }
-        }
-      }
-
-
-      console.log(stack);
-    }
-    return [progressStack, setProgressStack]
-  }
-
-  const [progressStack, setProgress] = createProgress(
-      ["receiptProgress", "connectionProgress", "BindingContainer"]);
-
-
-
-
   return (
       <>
         <section className="content-section" >
@@ -74,36 +32,97 @@ function App() {
 
         <section className="docker-progress-scene">
           <Controller globalSceneOptions={{triggerHook: 0}}>
-            <Scene pin  duration="15000" indicators={true}>
+            <Scene pin  classToggle="fade-in" duration="20000">
               {(progress) => {
-                delta = progress - globalProgress;
-                globalProgress = progress;
+                const offset = globalProgress(progress);
+                setProgressStack(progressStack, offset);
 
-                setProgress(progressStack, delta)
-
-                if (delta >= 0) {
-                  for (let i = 0; i < animStack.length; i++) {
-                    if (animStack[i] < 1 + delta) {
-                      animStack[i] += delta * 3;
-                      break;
-                    }
-                  }
-                }
-                if (delta < 0) {
-                  for (let i = animStack.length; i >= 0; i--) {
-                    if (animStack[i] >= 0 - delta) {
-                      animStack[i] += delta * 3;
-                      break;
-                    }
-                  }
-                }
-
-
+                const {receiptProgress, connectionProgress, bindingProgress} = progressStack;
                 return (
-                  <div className="progress-list">
-                    <ReceiptContainer progress={animStack[0]} />
-                    <ConnectionContainer progress={animStack[1]} />
-                    <BindingContainer progress={animStack[2]} />
+                  <div className="progress-list hide">
+                    <h3 className="progress-list-header">Для чего?</h3>
+
+                    <div className="progress-list-deploy receipt-container">
+                      <ReceiptContainer progress={receiptProgress} />
+                    </div>
+                    <div className="progress-list-deploy connection-container">
+                      <ConnectionContainer progress={connectionProgress} />
+                    </div>
+                    <div className="progress-list-deploy binding-container">
+                      <BindingContainer progress={bindingProgress} />
+                    </div>
+
+                    <div className="progress-list-text text-container">
+                      <Timeline
+                        progress={receiptProgress}
+                        paused
+                        target={
+                          <div className="text-item">
+                            <span className="number">01.</span>
+                            <h5>Развертывание приложений используя подходы</h5>
+                            <p>
+                              <span className="blue-light">Heroku buildpack и Dockerfile </span>
+                              или с помощью предустановленной конфигурации
+                            </p>
+                          </div>
+                        }
+                      >
+                        <Tween
+                            from={{transform: "translateY(100px)",opacity: 0}}
+                            to={{transform: "translateY(0px)", opacity: 1}}
+                        />
+                        <Tween
+                            to={{transform: "translateY(-100px)", opacity: 0}}
+                        />
+
+                      </Timeline>
+
+                      <Timeline
+                          progress={connectionProgress}
+                          paused
+                          target={
+                            <div className="text-item">
+                              <span className="number">02.</span>
+                              <h5>Развертывание приложений используя подходы</h5>
+                              <p>
+                                <span className="blue-light">Heroku buildpack и Dockerfile </span>
+                                или с помощью предустановленной конфигурации
+                              </p>
+                            </div>
+                          }
+                      >
+                        <Tween
+                            from={{transform: "translateY(100px)",opacity: 0}}
+                            to={{transform: "translateY(0px)", opacity: 1}}
+                        />
+                        <Tween
+                            to={{transform: "translateY(-100px)", opacity: 0}}
+                        />
+                      </Timeline>
+
+                      <Timeline
+                          progress={bindingProgress}
+                          paused
+                          target={
+                            <div className="text-item">
+                              <span className="number">03.</span>
+                              <h5>Развертывание приложений используя подходы</h5>
+                              <p>
+                                <span className="blue-light">Heroku buildpack и Dockerfile </span>
+                                или с помощью предустановленной конфигурации
+                              </p>
+                            </div>
+                          }
+                      >
+                        <Tween
+                            from={{transform: "translateY(100px)",opacity: 0}}
+                            to={{transform: "translateY(0px)", opacity: 1}}
+                        />
+                        <Tween
+                            to={{transform: "translateY(-100px)", opacity: 0}}
+                        />
+                      </Timeline>
+                    </div>
                   </div>
               )}}
             </Scene>
