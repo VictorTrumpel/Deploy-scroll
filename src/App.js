@@ -7,18 +7,6 @@ import BindingContainer from "./acts/BindingContainer";
 import {createGlobalProgress, createProgressStack} from "./progressHooks/progressWather";
 import {Timeline, Tween} from "react-gsap";
 
-
-const display = {
-  from: {
-    display: 'none'
-  },
-  to: {
-    display: 'block'
-  }
-}
-
-
-
 const globalProgress = createGlobalProgress();
 const [progressStack, setProgressStack] = createProgressStack(
     ["receiptProgress", "connectionProgress", "bindingProgress"]);

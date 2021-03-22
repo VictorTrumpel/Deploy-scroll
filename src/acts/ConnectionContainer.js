@@ -1,5 +1,5 @@
 import {Tween, Timeline} from 'react-gsap';
-import {animItemFadeIn} from "../static/animScripts/animScripts";
+import {animItemFadeIn, animItemTop, animItemLeft, animItemRight} from "../static/animScripts/animScripts";
 import React from "react";
 import PostreSQLItem from "../static/items/PostreSQLItem";
 import RedisItem from "../static/items/RedisItem";
@@ -38,13 +38,13 @@ const ConnectionContainer = ({progress}) => (
         </div>
 
         <div className="postre-sql">
-          <Tween {...animItemFadeIn}>
+          <Tween {...animItemRight}>
             <PostreSQLItem />
           </Tween>
         </div>
 
         <div className="redis node-container">
-          <Tween {...animItemFadeIn}>
+          <Tween {...animItemRight}>
             <RedisItem />
           </Tween>
         </div>
@@ -58,7 +58,7 @@ const ConnectionContainer = ({progress}) => (
         </div>
 
         <div className="postre-sql node-container">
-          <Tween {...animItemFadeIn}>
+          <Tween {...animItemLeft}>
             <PostreSQLItem />
           </Tween>
         </div>
@@ -74,7 +74,7 @@ const ConnectionContainer = ({progress}) => (
         </div>
 
         <div className="postre-sql java-container">
-          <Tween {...animItemFadeIn}>
+          <Tween {...animItemTop}>
             <PostreSQLItem />
           </Tween>
         </div>
@@ -88,7 +88,7 @@ const ConnectionContainer = ({progress}) => (
         </div>
 
         <div className="redis java-container">
-          <Tween {...animItemFadeIn}>
+          <Tween {...animItemRight}>
             <RedisItem />
           </Tween>
         </div>

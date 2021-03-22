@@ -1,6 +1,13 @@
 import {Tween, Timeline} from 'react-gsap';
 import React from "react";
-import {animItemFadeIn, animDockerLogo, animExtendNodeFadeIn} from "../static/animScripts/animScripts";
+import {
+  animItemFadeIn,
+  animDockerLogo,
+  animExtendNodeFadeIn,
+  animItemLeft,
+  animItemRight,
+  animItemTop
+} from "../static/animScripts/animScripts";
 import DockerLogo from "../static/items/DockerLogo";
 import Javaitem from "../static/items/JavaItem";
 import PhpItem from "../static/items/PhpItem";
@@ -28,7 +35,7 @@ const ReceiptContainer = ({progress}) => (
         </div>
 
         <div className="backend-container java">
-          <Tween {...animItemFadeIn}>
+          <Tween {...animItemRight}>
             <Javaitem ref={ref} />
           </Tween>
         </div>
@@ -43,7 +50,7 @@ const ReceiptContainer = ({progress}) => (
         </div>
 
         <div className="backend-container python">
-          <Tween {...animItemFadeIn}>
+          <Tween {...animItemTop}>
             <PythonItem ref={ref} />
           </Tween>
         </div>
@@ -57,7 +64,7 @@ const ReceiptContainer = ({progress}) => (
         </div>
 
         <div className="backend-container php">
-          <Tween {...animItemFadeIn}>
+          <Tween {...animItemTop}>
             <PhpItem ref={ref} />
           </Tween>
         </div>
@@ -85,7 +92,7 @@ const ReceiptContainer = ({progress}) => (
         </div>
 
         <div className="node1 nodejs-container">
-          <Tween {...animItemFadeIn}>
+          <Tween {...animItemTop}>
             <NodeJsItem ref={ref} />
           </Tween>
         </div>
@@ -99,7 +106,7 @@ const ReceiptContainer = ({progress}) => (
         </div>
 
         <div className="node2 nodejs-container">
-          <Tween {...animItemFadeIn}>
+          <Tween {...animItemTop}>
             <NodeJsItem ref={ref} />
           </Tween>
         </div>
@@ -113,7 +120,7 @@ const ReceiptContainer = ({progress}) => (
         </div>
 
         <div className="node3 nodejs-container">
-          <Tween {...animItemFadeIn}>
+          <Tween {...animItemTop}>
             <NodeJsItem ref={ref} />
           </Tween>
         </div>
